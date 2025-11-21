@@ -6,13 +6,15 @@
 # if your build system is make, then 'cmt' is equal to 'make'
 # 'cmt target' is equal to 'make target'
 
-set -euo pipefail
+set -euo pipefail # exit if some target failed - i think is good idea
 
-cmake_command="cmake --build ."
-
-if [ $# -ne 0 ]; then
-	cmake_command="$cmake_command --target $@"
+if [ $# -eq 0 ]; then
+	cmake --build .
+	exit 0
 fi
 
-eval "$cmake_command"
-
+for target in "$@"
+do
+	# cmake --build . --target t1 t2 ... - is not supported yet
+	cmake --build . --target $target
+done

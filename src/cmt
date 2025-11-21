@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# how to use:
+# in cmake-build-directoruy call 'cmt'
+# its equal to call your build system with same targets
+# if your build system is make, then 'cmt' is equal to 'make'
+# 'cmt target' is equal to 'make target'
+
+set -euo pipefail
+
+cmake_command="cmake --build ."
+
+if [ $# -ne 0 ]; then
+	cmake_command="$cmake_command --target $@"
+fi
+
+eval "$cmake_command"
+

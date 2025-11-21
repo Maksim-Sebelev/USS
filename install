@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# how to use:
+# sudo bash install [install scripts]
+# or
+# chmod +x install
+# sudo ./install [[install scripts]]
+
+set -euo pipefail
+
+if [ $# -eq 0 ]; then
+    echo "Usage: sudo bash $0 <sources that you want to install>"
+    exit 1
+fi
+
+install_dir="/usr/local/bin"
+
+for src in "$@"
+do
+    if ! [ -f "src/$src" ]; then
+        echo "No such file 'src/$src'"
+        continue
+    fi
+    
+    out_file="$install_dir/$src"
+
+    if [ -f "$out_file" ]; then
+	    echo "'$out_file' - already exists. I will not to overwrite it."
+	    continue 
+    fi
+
+    cp "src/$src" "$install_dir"
+    chmod +x "$out_file"
+done
+

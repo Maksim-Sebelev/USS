@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# tall = touch all
+# usage: tall
+# touch all files in current directory and all subdirs recursive
+# why?
+# I like to play World of Tanks. I have 2 OS in my pc - windows and ubuntu
+# when i switch os on windows to play WoT - the time is shifted forward 3 hours
+# so when i switch to ubuntu back, the time remains. i usually forget about this and remebmer after 1-2 hour.
+# and when i try to work with my programming projects, after fixing time, i cant use build-system,
+# because the time of last file updates is in future. so i need to update time-mark on all projects files.
+# so, the solution is - touch all files in projects dir:
+
+set -eou pipefail
+
+find . | xargs touch
+

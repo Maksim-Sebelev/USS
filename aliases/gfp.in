@@ -1,0 +1,11 @@
+# ====================================================
+# AUTOMATIC ALIASED WITH https://github.com/Maksim-Sebelev/USS/install-like-alias
+
+# gfp = git full process
+# usage: gfp
+# in gfp runtime you will be asked to write a description of the commit.
+
+alias gfp='git add --all && git commit && git push --all'
+
+# ====================================================
+

@@ -8,7 +8,7 @@ set -euo pipefail
 
 if [ $# -eq 0 ]; then
 	cmake_dir=".."
-	build_dir=".w"
+	build_dir=""
 elif [ $# -eq 2 ]; then
 	cmake_dir="$1"
 	build_dir="$2"

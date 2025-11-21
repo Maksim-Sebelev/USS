@@ -1,4 +1,6 @@
-#!/bin/bash
+
+# ====================================================
+# AUTOMATIC ALIASED WITH https://github.com/Maksim-Sebelev/USS/install-like-alias
 
 # tall = touch all
 # usage: tall
@@ -11,7 +13,7 @@
 # because the time of last file updates is in future. so i need to update time-mark on all projects files.
 # so, the solution is - touch all files in projects dir:
 
-set -eou pipefail
+alias tall='find . | xargs touch'
 
-find . | xargs touch
+# ====================================================
 

@@ -17,8 +17,8 @@ install_dir="/usr/local/bin"
 
 for src in "$@"
 do
-    if ! [ -f "src/$src" ]; then
-        echo "No such file 'src/$src'"
+    if ! [ -f "independent-commands/$src" ]; then
+        echo "No such file 'independent-commands/$src'"
         continue
     fi
     
@@ -29,7 +29,7 @@ do
 	    continue 
     fi
 
-    cp "src/$src" "$install_dir"
+    cp "independent-commands/$src" "$install_dir"
     chmod +x "$out_file"
 done
 

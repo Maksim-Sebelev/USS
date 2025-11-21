@@ -24,3 +24,18 @@ sudo bash install cmt tall
 
 `cmt` - (cmake target) заменяет любую систему сборки одной командой. Больше не надо помнить под какую систему сборки вы собрали ваш проект, для сборки нужного таргета просто вызовите `cmt <target>`.
 
+Чтобы установить alias:
+```bash
+bash install-like-alias <Ваш конфигурационный файл shel (~/.bashrc или ~/.zshrc)> <желаемый alias>
+source <Ваш конфигурационный файл shel (~/.bashrc или ~/.zshrc)>
+```
+
+Пример:
+```bash
+bash install-like-alias ~/.bashrc gfp
+source ~/.bashrc
+```
+
+
+`gfp` - (git full process) делает alias для `git add --all && git commit && git push`.
+`tall` - (touch all) применяет `touch` ко всем файлам в текующей директории. аргументы не принимает. Кому надо, тот знает :).

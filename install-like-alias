@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -euo pipefail
+
+if [ $# -ne 2 ]; then
+    echo "Usage: $0 <path to shell setting file (.bashrc/.zshrc)> [aliases file]"
+    exit 1
+fi
+
+shell_rc="$1"
+
+if ! [ -f "$shell_rc" ]; then
+    echo "No such file: $shell_rc"
+    exit 1
+fi
+
+alias="aliases/$2.in"
+
+if ! [ -f "$alias" ]; then
+    echo "No such file: $alias"
+    exit 1
+fi
+
+cat "$alias" >> "$shell_rc"

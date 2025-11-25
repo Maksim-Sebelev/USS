@@ -1,0 +1,11 @@
+# ====================================================
+# AUTOMATIC ALIASED WITH https://github.com/Maksim-Sebelev/USS/install-like-alias
+
+# this is the joke with g++ alias. we are imitating the g++-syntax error, but g++ made nothing
+# we just show error-message in console
+# also we alias unalias with a interesting message
+
+alias g++='echo -e \"\033[1mmain.cpp:\033[0m In function \u2018\033[1mint \033[32mmain\033[0m()\033[0m\u2019:\n\033[1mmain.cpp:5:16:\033[0m \033[31m\033[1merror:\033[0m expected identifier before numeric constant\n    5 |         return \033[31m\033[1m0\033[0m;\n      |                \033[31m\033[1m^\033[0m\n\033[1mmain.cpp:5:9:\033[0m \033[31m\033[1merror:\033[0m named return values are no longer supported\n    5 |         \033[31m\033[1mreturn\033[0m 0;\n      |         \033[31m\033[1m^~~~~~\033[1m\" && 0 > /dev/null 2>&1 '
+alias unalias='echo "\033[38;5;196m\u0441\033[1m\035[38;5;202m\u043e\033[1m\035[38;5;226m\u0441\033[1m\035[38;5;46m\u0438\033[1m\035[38;5;21m\u0020\033[1m\035[38;5;93m\u0435\033[1m\035[38;5;201m\u0431\033[1m\035[38;5;195m\u043b\u0430\u043d\033[0m"'
+
+# ====================================================
